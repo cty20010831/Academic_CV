@@ -1,0 +1,216 @@
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\usepackage{fontawesome5} % Cute icons
+
+\usepackage[style=apa]{biblatex}
+\addbibresource{ref.bib}
+
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	Personal Info
+%----------------------------------------------------------------------------------------
+
+\begin{center}
+    {\Huge \scshape{Tianyue Cong}} \\ \vspace{9pt}
+    \small
+    % For now, forget about telephone
+    % \raisebox{-0.1\height}\faPhone\ 1 (773) 794-2829 ~
+    \href{congtianyue233@gmail.com}{\faEnvelope\ congtianyue233@gmail.com} ~ 
+    \href{https://www.linkedin.com/in/tianyue-cong-94969921b/}{\faLinkedin\ Tianyue Cong}  ~
+    \href{https://github.com/cty20010831}{\faGithub\ cty20010831} ~
+    \href{https://cty20010831.github.io/personal_site}{\faGlobe\ Personal Website}
+    \vspace{-5pt}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	Education Section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+{\bf University of Chicago} \hfill {Expected 2025} \\
+{\textit{Master of Arts in Computational Social Science}} \hfill {\textit{GPA: 3.92/4}} \\
+\vspace{-0.3em} \\ 
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Coursework & Computer Science with Social Science Applications, Computational Linguistics \\
+           & Large-Scale Computing for the Social Sciences, Computational Content Analysis \\
+           & Deep Learning Systems, Web Development, Long-Term Memory \\ 
+\vspace{-0.6em} \\ 
+Honors & Maroon Research Scholarship (2023--24) \\ 
+       & Social Science Promise Scholarship (2023--24) \\ 
+\end{tabular}
+
+{\bf The Chinese University of Hong Kong} \hfill {2019--2023} \\
+{\textit{Bachelor of Science in Applied Psychology (First Class Honors)}} \hfill {\textit{GPA: 3.89/4}} \\
+\vspace{-0.3em} \\ 
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Coursework & Cognitive Psychology, Abnormal Psychology, Decision-Making Process, \\
+           & Quantitative Methods and Experimental Design, Research Method and Writing \\
+\vspace{-0.6em} \\ 
+Honors & CLASS A Academic Performance Scholarship (2021--22, 2020--21) \\ 
+       & CLASS B Academic Performance Scholarship (2019--20) \\ 
+       & Dean's List (2021--22, 2020--21, 2019--20) \\ 
+       & CUHKSZ Undergraduate Research Awards (approximately \$1,000 research grant) \\ 
+\end{tabular}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Skills and Interests Section 
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Skills and Interests}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Research Interests & Computational Psychiatry, Cognitive Modeling, Decision Making, Creativity \\
+Programming & Python, R, MATLAB, Stan, jsPsych, SQL, Linux, \LaTeX, Mplus, C\texttt{++}\\
+Libraries/Software & Data Manipulation (\textbf{dplyr}, \textbf{Pandas}), Scientific Computing (\textbf{NumPy}, \textbf{Scipy}) \\
+                   & Computational Modeling (\textbf{PyStan}, \textbf{PyMC}, \textbf{RStan}), NLP (\textbf{Gensim}, \textbf{NLTK}, \textbf{spaCy}) \\
+                   & Web Scraping (\textbf{Request}, \textbf{Selenium}), Visualization (\textbf{ggplot}, \textbf{Matplotlib}, \textbf{Seaborn}) \\
+                   & Neuroimaging (\textbf{Nipype}, \textbf{Nilearn}, \textbf{SPM12}, \textbf{cat12}, \textbf{FSL}, \textbf{FreeSurfer})\\
+                   & Machine/Deep Learning (\textbf{Keras}, \textbf{PyTorch}, \textbf{Scikit-Learn}, \textbf{Tensorflow}) \\ 
+                   & Big Data/High Performance Computing (\textbf{Cython}, \textbf{PySpark}, \textbf{Dask}) \\
+Questionnaire & Qualtrics, Credamo \\ 
+Language & Chinese (native), English (IELTS 8; GRE 332+5)
+\end{tabular}\\
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Research Experience Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Research Experience}
+
+% Include thesis?
+\textbf{Brown University} \hfill{Jun 2024--Present} \\
+\textit{Summer Research Assistant, Dr. Michael Frank’s Lab} \hfill{\textit{Providence, Rhode Island}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Assist} in a computational psychiatry project that studies inhibitory control of patients with suicidality.
+     \item \textbf{Define} likelihood functions for go, stop-respond, and successful inhibition trials in stop signal task using PyMC.
+     \item \textbf{Design} a comprehensive pipeline for Hierarchical Bayesian Modeling via PyMC, encompassing data simulation, model fitting, and model checking. 
+     \item \textbf{Incorporate} the model of the stop signal task into HSSM package before fitting it to empirical data.
+ \end{itemize}
+
+\textbf{Icahn School of Medicine at Mount Sinai} \hfill{Jun 2024--Present} \\
+\textit{Summer Research Assistant, Dr. Herbert Wu’s Lab} \hfill{\textit{New York, New York State}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Assist} in a computational neuroscience project on building artificial neural network (ANN) for the delayed match to sample (DMS) task. 
+     \item \textbf{Update} the original vanilla multi-layer recurrent neural network (RNN) to the latest version of tensorflow. 
+     \item \textbf{Build} RNN following Dale's principle for the DMS task via tensorflow, including Column Excitation-Inhibition approach (constraining entire columns of the weight matrices to be of the equal sign) and Dale’s ANNs approach (ANNs with separate populations of excitatory and inhibitory units).
+ \end{itemize}
+
+\textbf{University of Chicago} \hfill{Sept 2023--Present} \\
+\textit{Master Thesis Project (Advisor: Dr. Akram Bakkour)} \hfill{\textit{Chicago, Illinois}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Investigate} the mood-creativity linkage, focusing on the influence of mood activation levels (happiness and calmness) on creative outputs via the incompleteness drawing task.
+     \item \textbf{Employ} Compositional Stroke Embedding (CoSE) Model and Divergent Semantic Integration (DSI; a narrative analysis method) to quantify the flexibility and originality aspects of creativity.
+     \item \textbf{Write} JsPsych code to build the experimental website, incorporating mood induction via film clips, the incompleteness drawing task, and narratives on the thought process behind the drawings.
+ \end{itemize}
+
+\textbf{University of Chicago} \hfill{Sept 2023--Present} \\
+\textit{Research Assistant, Dr. Akram Bakkour’s Lab} \hfill{\textit{Chicago, Illinois}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Assist} in a project on how feature-based representation may facilitate generalizable predictive knowledge.
+     \item \textbf{Implement} a scalable deep learning analysis pipeline for feature extraction in the robot drawing task, tailored for upcoming deployment on the Midway3 High Performance Computing Cluster for large dataset analysis.
+     \item \textbf{Employ} Tensorflow and Scikit-Learn to construct and validate predictive Convolutional Neural Networks models, streamlining data preprocessing, analysis, and visualization processes.
+ \end{itemize}
+
+\textbf{Southern University of Science and Technology} \hfill{Jun 2023--Jun 2024} \\
+\textit{Research Assistant, Dr. Jinchu Hu’s Lab} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Built} the early version of STAR lab website, including introduction of lab research interests, published works, description of team members, and ongoing projects. % Finish a few remaining parts on github? 
+     \item \textbf{Wrote} MATLAB and Stan syntax to build 12 reinforcement models (variants of The Rescorla–Wagner and Pearce–Hall learning models) studying reward reversal learning among patients with major depressive disorder. 
+     \item \textbf{Conducted} parameter recovery, model estimation (including maximum likelihood estimation and Hierarchical Bayesian Modeling), model comparison, and posterior predictive check for the reward reversal learning project. 
+     \item \textbf{Performed} Hierarchical Bayesian Modeling analysis on the effect of oxytocin on fear reversal among mentally healthy participants, encompassing model fitting (using Pearce–Hall learning model) and group comparison of treatment and gender effects (using highest density interval of group parameter differences).
+     % \item \textbf{Performed} data preprocessing and cleaning using the tidyverse package in R. 
+     % \item \textbf{Visualized} preliminary study results (including line charts, grouped bar charts, and correlation plots) using the ggplot2 package in R for research grant application.
+ \end{itemize}
+ 
+\textbf{The Chinese University of Hong Kong} \hfill{Mar 2022--Jun 2023} \\
+\textit{Research Project Leader, Undergraduate Research Fellowship Program} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Initiated} a research project to examine the underlying mechanism by which academic stress negatively influences sleep quality.
+     \item \textbf{Adapted} a two-factor academic stress scale for Chinese college students in the context of academic involution.
+     \item \textbf{Validated} the factor structure of the 10-item academic stress scale using Mplus.
+     \item \textbf{Conducted} path analyses using the lavaan package in R and the PROCESS macro in SPSS.
+     \item \textbf{Confirmed} (a) two different emotion regulation processes leading to academic stress (i.e., a negative effect of cognitive reappraisal on academic stress whereas a positive effect for expressive suppression) and (b) the serial mediation of social comparison and bedtime procrastination, linking academic stress to sleep quality.
+ \end{itemize}
+
+\textbf{The Chinese University of Hong Kong} \hfill{Sept 2022--May 2023} \\
+\textit{Research Assistant, Dr. Zhicheng Lin’s Lab} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Supported} a research project examining the characteristics and development pattern of psychological research through the lens of metascience.
+    \item \textbf{Coded} issues from APA and APS (two top psychology journals) over the past few years based on authorship (e.g., number of authors, nations represented) and sample information (e.g., sample size, demographics).
+    \item \textbf{Calculated} the Simpson diversity index to determine the racial composition of selected authors and editors from APA and APS using the vegan package in R. 
+ \end{itemize}
+
+\textbf{The Chinese University of Hong Kong} \hfill{Sept 2021--May 2023} \\
+\textit{Research Assistant, Dr. Shi Yu’s Lab} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Contributed} to a longitudinal study investigating Chinese middle school students’ study motivation and meaning of life.
+    \item \textbf{Translated} scale items measuring authentic inner compass from Chinese to English.
+    \item \textbf{Performed} data cleaning to ensure data quality using Excel and SPSS.
+    \item \textbf{Identified} careless responses using data screening methods such as long-string index, psychometric synonyms and antonyms, and even-odd consistency via the careless package in R.
+    \item \textbf{Assisted} in designing a questionnaire consisting of 14 scales via Credamo to measure meaning of life and related constructs. 
+ \end{itemize}
+
+\textbf{Cambridge University} \hfill{Jul 2021--Aug 2021} \\
+\textit{Program Participant, Pembroke College Summer Research Program} \hfill{\textit{Shanghai, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Wrote} a 6000-word review paper on factors predicting intentions to use and reuse online food delivery.
+    \item \textbf{Conducted} literature review and summarized theoretical/conceptual frameworks in 16 selected papers.
+    \item \textbf{Synthesized} the common factors predicting people's intentions to use and reuse online food delivery and interpreted the similarity and difference in predictors of intentions to use and reuse
+    \item \textbf{Evaluated} the strengths and weaknesses in methodology and study design in selected studies and suggested factors and also moderators to be included in future research.
+    \item \textbf{Received} first-class marks for the project.  
+ \end{itemize}
+
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+%	Publication Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Publications}
+\nocite{*}
+\printbibliography[heading=none]
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Teaching Experience Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Teaching Experience}
+
+\textbf{University of Chicago} \hfill {Sept 2024--Present} \\
+\textit{Teaching Assistant, Computer Science with Social Science Applications 1} \hfill {\textit{Chicago, Illinois}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Led} bi-weekly lab sessions, guiding graduate students on Python programming assignments.
+    \item \textbf{Assisted} the course instructor in grading assignments, midterm and final exams for a class of 21 students.
+    \item \textbf{Held} office hours to provide one-on-one tutoring and technical support for students.
+
+ \end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Internship Section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Internship Experience}
+\textbf{iResearch Consulting Group} \hfill Jun 2022--Aug 2022 \\
+\textit{Strategy Consulting Intern} \hfill \textit{Guangzhou, China}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Summarized} interviews with opinionated leaders in manufacturing and fast-moving consumer goods industries.
+    \item \textbf{Performed} desk research on retail technologies and digital marketing in the wine industry.
+    \item \textbf{Analyzed} traffic structure of different channels and tracked customer cross-channel journey, followed by A/B tests to compare between-group differences on customer aims of purchase and Gross Merchandise Value contribution in Excel. 
+    \item \textbf{Used} shapely value methods for channel attribution and calculation of spillover effects of e-commerce platforms in Excel.
+    \item \textbf{Conducted} market basket analysis with apriori algorithm (related goods) and performed logistic regression to determine the significant predictors of purchasing and repurchasing of confectionary goods using R.  
+    \item \textbf{Wrote} the final report to propose indications on (a) market opportunities for 7 different consumer groups and (b) optimization of 7 touchpoints and ways to speed up consumer conversion on confectionary goods.
+ \end{itemize}
+\end{rSection} 
+\end{document}
