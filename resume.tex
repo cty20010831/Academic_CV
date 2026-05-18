@@ -1,0 +1,476 @@
+% This is the comprehensive version of my CV, including the internship experience
+\documentclass{resume} % Use the custom resume.cls style
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\usepackage{fontawesome5} % Cute icons
+\usepackage{hyperref}
+\usepackage[style=apa, backend=biber, sorting=ydnt, keywords]{biblatex} % Check out this: https://www.overleaf.com/learn/latex/Bibliography_management_with_biblatex#Customizing_the_bibliography
+
+% Custom sorting: year+month descending, then name, title
+\DeclareSortingScheme{ymdnt}{
+  \sort{\field{presort}}
+  \sort[final]{\field{sortkey}}
+  \sort[direction=descending]{\field{sortyear}\field{year}\literal{9999}}
+  \sort[direction=descending]{\field{month}\literal{00}}
+  \sort{\field{sortname}\field{author}\field{editor}\field{translator}\field{sorttitle}\field{title}}
+  \sort{\field{sorttitle}\field{title}}
+}
+
+\addbibresource{ref.bib}
+
+% Define what "highlight" means (in this case, bold my name) in `author+an` in .bib file
+\renewcommand*{\mkbibnamefirst}[1]{%
+  \ifitemannotation{highlight}{\mkbibbold{#1}}{#1}}
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \ifitemannotation{highlight}{\mkbibbold{#1}}{#1}}
+
+% Define categories (because keywords in unpublished does not work for APA style ...)
+\DeclareBibliographyCategory{underreview}
+\DeclareBibliographyCategory{inpreparation}
+\DeclareBibliographyCategory{poster}
+
+\usepackage[absolute,overlay]{textpos}
+\usepackage{datetime}
+% Custom date format
+\newdateformat{mydate}{\monthname[\THEMONTH]~\THEYEAR}
+
+\begin{document}
+% "Last Edited" section in the Top Right Corner
+\begin{textblock*}{4cm}(16.5cm, 1cm)
+    \small Last Edited: \mydate\today
+\end{textblock*}
+
+%----------------------------------------------------------------------------------------
+%	Personal Info
+%----------------------------------------------------------------------------------------
+\begin{center}
+    {\Huge \scshape{Sam (Tianyue) Cong}} \\ \vspace{9pt}
+    \small
+    % For now, forget about telephone
+    % \raisebox{-0.1\height}\faPhone\ 1 (773) 794-2829 ~
+    \href{samc010831@gmail.com}{\faEnvelope\ samc010831@gmail.com} ~ 
+    \href{https://www.linkedin.com/in/tianyue-cong-94969921b/}{\faLinkedin\ Tianyue Cong}  ~
+    \href{https://github.com/cty20010831}{\faGithub\ cty20010831} ~
+    \href{https://cty20010831.github.io/personal_site}{\faGlobe\ Personal Website}
+    \vspace{-5pt}
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	Education Section
+%----------------------------------------------------------------------------------------
+\vspace{1em}
+\begin{rSection}{Education}
+
+{\bf University of Chicago} \hfill {Sept 2023--Jun 2025} \\
+{\textit{Master of Arts in Computational Social Science}} \hfill {\textit{GPA: 3.88/4}} \\
+\vspace{-0.1em} \\ 
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Coursework & Introduction to AI: Deep Learning and GAI, Mathematical Foundations of Machine Learning \\ 
+& Bayesian Machine Learning with Generative AI Applications, Computational Content Analysis \\
+& Large-Scale Computing for the Social Sciences, Computational Linguistics, Web Development \\
+& Advanced Topics in Human Neuroimaging, Neuroscience of Narrative, Theoretical Neuroscience \\ 
+\vspace{-0.2em} \\ 
+Honors & Maroon Research Scholarship (2023--24) \\ 
+       & Social Science Promise Scholarship (2023--24) \\ 
+       & Nomination for the Best Thesis Award of the Computational Social Science program \\
+\end{tabular}
+
+\vspace{1em}
+
+{\bf The Chinese University of Hong Kong} \hfill {Sept 2019--May 2023} \\
+{\textit{Bachelor of Science in Applied Psychology (First-Class Honors)}} \hfill {\textit{GPA: 3.89/4}} \\
+\vspace{-0.1em} \\ 
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Coursework & Cognitive Psychology, Abnormal Psychology, Decision-Making Process, \\
+           & Quantitative Methods and Experimental Design, Research Method and Writing \\
+\vspace{-0.2em} \\
+Exchange & Cambridge University Pembroke College Research Program (Jul 2021--Aug 2021) \\
+\vspace{-0.2em} \\ 
+Honors & CLASS A Academic Performance Scholarship (2021--22, 2020--21) \\ 
+       & CLASS B Academic Performance Scholarship (2019--20) \\ 
+       & Dean's List (2021--22, 2020--21, 2019--20) \\ 
+       & CUHKSZ Undergraduate Research Awards (approximately \$1,000 research grant) \\ 
+       & First-Class Honors of Pembroke College Research Program \\ 
+\vspace{-0.6em} \\ 
+\end{tabular}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Research Interests Section 
+%----------------------------------------------------------------------------------------
+% Maybe add a word cloud of research interests in my personal website?
+\vspace{1em}
+\begin{rSection}{Research Interests}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+\textbf{High-level Cognition} & Decision-Making, Inhibitory Control \\
+                              & Cognitive Flexibility, Creative Reasoning \\[2ex]
+\textbf{Naturalistic Cognitive Neuroscience} & Naturalistic Stimuli, VR-Enhanced Paradigms \\
+                                             & Spontaneous Thought Processes \\[2ex]  
+\textbf{Computational Psychiatry} & Cognitive Modeling, Bayesian/Active Inference \\
+                                  & Reinforcement Learning \\[2ex]
+\textbf{Digital Mental Health} & Ecological Momentary Assessment, Smartphone/Wearable Sensors \\
+                               & Real-Time Risk Monitoring, Just-in-Time Adaptive Interventions \\
+                               & Clinical Decision Support \\[2ex]  
+\textbf{Digital Phenotyping Analytics} & Signal Processing, Multimodal Fusion, Representation Learning \\
+                                       & Dynamical System Modeling, Intensive Longitudinal Modeling \\
+                                       & Anomaly Detection, Missing Data Imputation \\[2ex]  
+                                  
+\end{tabular}\\
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Research Experience Section
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{rSection}{Research Experience}
+\textbf{\href{https://www.digitalpsych.org/}{Division of Digital Psychiatry}, Beth Israel Deaconess Medical Center} \hfill{Jul 2025--Present} \\
+\textit{Research Assistant (Principal Investigator: John Torous)} \hfill{\textit{Boston, Massachusetts}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Lead} a digital phenotyping project examining the stress-buffering effects of greenspace exposure using continuous-time structural equation modeling, demonstrating strong buffering effects among healthy controls but negligible benefits among clinical high-risk (CHR) people for psychosis due to heightened stress vulnerability.
+     \item \textbf{Assist} in preparing NIH R01 grant proposal for a two-cohort, three-month prospective digital phenotyping study on the mechanisms of medication non-adherence in psychosis, designing the dynamic structural equation modeling analytical framework to examine how digital phenotyping features mediate medication non-adherence. 
+     \item \textbf{Embed} multimodal smartphone data (GPS-derived semantic context, accelerometry, and momentary mood reports) into coupled dynamical system models to examine how environmental exposure, behavior, and affect interact in psychosis, aiming to identify early-warning signals and mechanistic predictors of symptom escalation. 
+     \item \textbf{Collaborate} on sleep estimation project using Bayesian Hidden Markov Models with smartphone accelerometer and screen state data, including data analysis and co-authorship of introduction and discussion sections.
+     \item \textbf{Apply} Mixed-Effects Location–Scale Models to quantify within-individual sleep variability in CHR individuals for psychosis, testing whether sleep instability differentiates CHR from healthy controls.
+     \item \textbf{Contribute} to the \href{https://www.ampscz.org/}{AMP@SCZ} neuroimaging project investigating motor-related deficits in CHR individuals for psychosis, including both structural MRI and resting-state fMRI analyses.
+     \item \textbf{Maintain} the database workflow of \href{https://www.digitalpsych.org/digital-clinic1.html}{Digital Clinic} (a hybrid clinic combining telehealth and the \href{https://docs.lamp.digital/}{mindLAMP app} to provide remote, data-driven mental health care), implementing quality control measures, automating latest active and passive mindLAMP data retrieval, and generating comprehensive dashboard visualizations.
+     
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     % Decide not to include:
+     % AMP-SCZ presentation experience (representing my lab): Greenspace and social anhedonia projects
+
+     % Not really done yet: 
+     % \item \textbf{Initiate} an ongoing project probing the social functioning biomarkers in psychosis, leveraging active smartphone surveys, passive sensor data, and neuroimaging to examine the relationship between anhedonia, social withdrawal patterns, and psychotic symptom presentation. 
+     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \end{itemize}
+
+\textbf{\href{https://cdasr.mclean.harvard.edu/mlml/}{Motivated Learning and Memory Laboratory}, McLean Hospital} \hfill{Jul 2025--Present} \\
+\textit{Research Assistant (Principal Investigator: Dr. Daniel Dillon)} \hfill{\textit{Boston, Massachusetts}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Elucidate} whether anhedonia in major depressive disorder (MDD) reflects a general reinforcement learning (RL) deficit or a selective impairment in updating from positive (vs. negative) feedback.
+     \item \textbf{Test} hypothesized slower RL from positive outcomes related to anhedonia across two community samples and one sample of MDD and healthy control (HC) individuals. 
+     \item \textbf{Fit} Reinforcement Learning Drift Diffusion Model (RLDDM) on Probabilistic Selection Task (PST) behavioral data, identifying a selective reduction in positive learning rate with increased anhedonic depression scores in the community samples and MDD patients. 
+     \item \textbf{Conduct} ongoing fMRI analyses combining whole-brain contrasts, RL-DDM–based parametric modulators, and reward-network Region of Interest (ROI) tests to map group differences in reinforcement-learning signals between MDD and HC participants. 
+     % \item \textbf{Compute} whole-brain contrasts at feedback (Reward $>$ Zero) and choice (value-difference) to localize emerging group differences in reinforcement learning–related signals.
+     % \item \textbf{Integrate} trial-level RL-DDM regressors (e.g., signed reinforcement prediction errors) as parametric modulators to test group differences in voxel-wise neural sensitivity and relate these signals to individual learning rates.
+     % \item \textbf{Extend} these analyses to reward-processing ROIs (e.g., nucleus accumbens, medial PFC) to evaluate group differences in ROI sensitivity and link neural signatures to learning rates and behavioral outcomes. 
+     \item \textbf{Co-author} the methods and results sections in the final manuscript. 
+ \end{itemize}
+
+\textbf{\href{https://www.lnccbrown.com/}{Laboratory of Neural Computation and Cognition}, Brown University} \hfill{Jun 2024--Present} \\
+\textit{Research Assistant (Principal Investigator: Dr. Michael Frank)} \hfill{\textit{Providence, Rhode Island}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Design} a comprehensive PyMC Hierarchical Bayesian Modeling pipeline for the stop signal task, encompassing forward simulation, likelihood definition, model fitting, and model diagnostics (e.g., convergence checks, parameter recovery, posterior predictive checks).
+     \item \textbf{Define} likelihood functions for go, stop-respond, and successful-inhibition trials in the stop-signal task, based on the Independent Race Model framing response inhibition as a race between go and stop processes. 
+     \item \textbf{Integrate} trial-specific likelihood functions into the Hierarchical Bayesian Modeling pipeline, leveraging JAX for efficient automatic differentiation and GPU-accelerated computation to speed up sampling and inference.
+     \item \textbf{Validate} my implementation against benchmark BEESTS software in terms of    parameter posterior distributions and median estimates, alongside alignment in parameter recovery and posterior predictive checks results.
+     \item \textbf{Incorporate} my simulation and inference frameworks into \href{https://lnccbrown.github.io/ssm-simulators/}{SSMS package} for forward data simulation and \href{https://lnccbrown.github.io/HSSM/}{HSSM package} for hierarchical model building and inference.  
+     \item \textbf{Apply} my pipeline to a computational psychiatry project, generating parameter estimates of inhibitory control as predictors of 18-month suicidal ideation trajectories in teenagers (in collaboration with Dr. Richard Liu).
+ \end{itemize}
+
+\textbf{\href{https://www.wulab.bio/}{Wu Lab of Social Decision-Making}, Icahn School of Medicine at Mount Sinai} \hfill{Jun 2024--Dec 2024} \\
+\textit{Summer Research Assistant (Principal Investigator: Dr. Herbert Wu)} \hfill{\textit{New York, New York State}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Contributed} to a computational neuroscience project modeling delayed match-to-sample (DMS) behavior using recurrent neural networks inspired by premotor cortical circuits (ALM).
+     \item \textbf{Upgraded} an existing vanilla multi-layer recurrent neural network (RNN) codebase to the latest TensorFlow framework, improving computational efficiency, modularity, and compatibility with modern deep-learning tools.
+     \item \textbf{Implemented} biologically inspired RNN architectures obeying Dale’s principle, including (a) Column Excitation–Inhibition (E/I) constraints that enforce sign-consistent columns in weight matrices and (b) Dale’s ANN approach, which constructs separate excitatory and inhibitory neuron populations to model cortex-like dynamics.
+     \item \textbf{Evaluated} three ALM-inspired RNN variants (full model, ALM-persistence-only model, and no-persistence model) across control, sample+early, late, and sample+delay conditions.
+     \item \textbf{Discovered} that ALM-like persistent activity alone was insufficient for robust working-memory performance, whereas removing ALM-persistence yielded the most stable and delay-resilient RNN architecture, highlighting the importance of broader circuit mechanisms beyond simple persistent firing. 
+ \end{itemize}
+
+\textbf{\href{https://bakkourlab.uchicago.edu/}{Bakkour Memory and Decision Lab}, University of Chicago} \hfill{Sept 2023--May 2025} \\
+\textit{Master Thesis Project (Advisor: Dr. Akram Bakkour)} \hfill{\textit{Chicago, Illinois}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Integrated} the visual creative task with AI-driven techniques to study the flexibility pathway of creativity, hypothesizing that positive activating moods enhance originality by increasing cognitive flexibility.
+     \item \textbf{Adopted} the Incomplete Shape Drawing task to track both the dynamics of the creative process indicative of the cognitive flexibility and originality of the final completed drawings. 
+     \item \textbf{Employed} validated film clips to induce high-arousal positive, low-arousal positive, or neutral mood states, randomly assigning 90 participants to one of these three conditions.
+     \item \textbf{Wrote} JsPsych code to build the experimental website, incorporating mood induction via film clips, the incompleteness drawing task, and narratives on the thought process behind the drawings.
+     \item \textbf{Assessed} the flexibility aspect of creativity via (a) the Compositional Stroke Embedding model to compute entropy and Bhattacharyya distance of stroke-level drawing behavior and (b) divergent semantic integration (an NLP measure) to quantify the integration of conceptually distant ideas in participants’ narratives.
+     \item \textbf{Utilized} the Automated Drawing Assessment model (a deep learning model trained on human originality ratings from the same drawing task) to measure the originality aspect of creativity. 
+     \item \textbf{Identified} two distinct flexibility modes (persistent exploratory breadth and adaptive switching) and found that only adaptive switching significantly predicts creative originality, despite no observed differences in flexibility or originality across mood conditions.
+ \end{itemize}
+
+\textbf{\href{https://bakkourlab.uchicago.edu/}{Bakkour Memory and Decision Lab}, University of Chicago} \hfill{Sept 2023--May 2025} \\
+\textit{Research Assistant (Principal Investigator: Dr. Akram Bakkour)} \hfill{\textit{Chicago, Illinois}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Assisted} in a project studying how feature-based representation may facilitate generalizable predictive knowledge, which supports inferences about distant future outcomes. 
+     \item \textbf{Adopted} a multi-phase, feature-based RL task where participants (a) learned transitions between start and terminal robots, (b) learned reward values of terminal robots, and (c) generalized transition–reward mappings to novel robots composed of recombined features (6 body parts) to probe structural and compositional learning.
+     \item \textbf{Fit} the Successor Representation Model to determine the best fitting model and compared generalization performance across (a) conjunction-based learning (no generalization), (b) conjunction-based learning (integrating learning for similar conjunctions), and (c) feature-based learning.
+     \item \textbf{Found} largest proportion of participants were best fit by feature-based learning model and that participants best fit by this model generalized the best. 
+     \item \textbf{Constructed} Convolutional Neural Networks on the Midway3 High Performance Computing Cluster to extract compositional feature representations from robot stimuli, enabling comparison between model-derived features and participants' generalization behavior.
+ \end{itemize}
+ 
+\textbf{\href{https://star-lab.cc/startlab/STARLAB.htm}{STAR Lab}, Southern University of Science and Technology} \hfill{Jun 2023--Jun 2024} \\
+\textit{Research Assistant (Principal Investigator: Dr. Jinchu Hu)} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+     \item \textbf{Investigated} sex-specific effects of intranasal oxytocin on threat reversal learning to clarify its therapeutic potential for anxiety disorders, overcoming limitations of the male-dominant samples of prior studies.
+     \item \textbf{Administered} a double-blind, placebo-controlled threat reversal study with 180 healthy adults (50\% female), using skin conductance response as the threat (response) measure. 
+     \item \textbf{Performed} Hierarchical Bayesian Modeling of threat reversal learning, using the Pearce–Hall model for parameter estimation and comparisons of treatment and sex effects (based on the Highest Density Interval of group parameter distributions). 
+     \item \textbf{Identified} impaired threat reversal learning in females under placebo, and a female-specific enhancement of reversal learning following oxytocin administration.
+     \item \textbf{Assisted} in a grant application for the neural computational mechanisms underlying reward learning deficits in MDD patients, focusing on Hierarchical Bayesian Modeling of reward reversal learning via Rescorla–Wagner and Pearce–Hall learning models.
+     \item \textbf{Built} the early version of STAR lab website, including the overview of lab research interests, published works, team members, and ongoing projects. 
+ \end{itemize}
+
+\textbf{\href{https://drive.google.com/file/d/1Rfo_FIJpXXdzmGF8aJqqhqCIW6UBfsGE/view?usp=sharing}{Undergraduate Research Awards Program}, The Chinese University of Hong Kong} \hfill{Mar 2022--Jun 2023} \\
+\textit{Project Leader (Supervisor: Dr. Shi Yu)} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {}  
+     \item \textbf{Initiated} a project studying the relationship between perceived academic stress and sleep quality among Chinese college students amid the background of increased (academic) involution.
+     \item \textbf{Validated} our newly developed 10-item, two-factor perceived academic stress scale for Chinese college students, differentiating perceived lasting academic stress (resulting from persistent competitive atmosphere) from perceived episodic academic stress (triggered by temporarily encountered academic difficulties).
+     \item \textbf{Conducted} path analyses via the lavaan package in R and the PROCESS macro in SPSS to test the potential mediating mechanisms of social comparison and bedtime procrastination, as well as emotion regulation strategy (expressive suppression vs. cognitive reappraisal) antecedents to academic stress.
+     \item \textbf{Demonstrated} that both episodic and sustained academic stress predicted poorer sleep quality via a serial mediation pathway through social comparison and bedtime procrastination. 
+     \item \textbf{Identified} distinct effects of the two emotion-regulation strategies: cognitive reappraisal reduced both episodic and chronic academic stress, whereas expressive suppression increased them. 
+     \item \textbf{Demonstrated} that the (negative) predicting power of expressive suppression was stronger for lasting than episodic academic stress using model constraint of structural equation modeling. 
+ \end{itemize}
+
+% Paper: Global Diversity of Authors, Editors, and Journal Ownership Across Subdisciplines of Psychology: Current State and Policy Implications
+\textbf{\href{https://myweb.cuhk.edu.cn/zclin/Home/Index}{Dr. Zhicheng Lin’s Lab}, The Chinese University of Hong Kong} \hfill{Sept 2022--May 2023} \\
+\textit{Research Assistant (Principal Investigator: Dr. Zhicheng Lin)} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Examined} the characteristics and development pattern of psychological research through the lens of metascience, focusing on the diversity of authorship, editorship, and ownership in top psychology journals.
+    \item \textbf{Coded} issues from 68 top psychology journals in 10 subdisciplines over the past few years based on authorship (e.g., number of authors, nations represented) and sample information (e.g., sample size, demographics).
+    % \item \textbf{Coded} issues from APA and APS (two top psychology journals) over the past few years based on authorship (e.g., number of authors, nations represented) and sample information (e.g., sample size, demographics).
+    \item \textbf{Calculated} the Simpson diversity index via the vegan package in R to determine (a) the diversity across authors, editors, and owners and (b) the diversity across subdisciplines and journals. 
+    \item \textbf{Demonstrated} that more authors and editors originate from the journal’s home country compared with a foreign journal, indicating a journal home-country bias.
+ \end{itemize}
+
+% Unfortunately, there has not been any publication coming from it. 
+\textbf{\href{https://hss.cuhk.edu.cn/en/teacher/470}{Dr. Shi Yu’s Lab}, The Chinese University of Hong Kong} \hfill{Sept 2021--May 2023} \\
+\textit{Research Assistant (Principal Investigator: Dr. Shi Yu)} \hfill{\textit{Shenzhen, China}}
+ \begin{itemize}
+    \itemsep -5pt {} 
+    \item \textbf{Contributed} to a longitudinal study on Chinese middle school students’ study motivation and meaning of life.
+    \item \textbf{Translated} scale items measuring authentic inner compass from Chinese to English.
+    \item \textbf{Assisted} in designing a questionnaire consisting of 14 scales to measure meaning of life and related constructs. 
+    \item \textbf{Performed} data cleaning to ensure data quality using Excel and SPSS.
+    \item \textbf{Identified} careless responses using data screening methods such as long-string index, psychometric synonyms and antonyms, and even-odd consistency via the careless package in R.
+ \end{itemize}
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+% Skills Section 
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Programming & Python, R, MATLAB, SQL, Julia, C\texttt{++}, \LaTeX \\[1ex]
+            & HTML/CSS, JavaScript, jsPsych, Stan, Mplus \\[1.5ex]
+Libraries \& Software  & \underline{Neuroimaging} (\textbf{fMRIPrep}, \textbf{Nipype}, 
+                                                   \textbf{Nilearn}, \textbf{SPM}, 
+                                                   \textbf{FSL}, \textbf{FreeSurfer}) \\[1ex] 
+                       & \underline{Bayesian Computational Modeling} (\textbf{PyMC}, \textbf{RStan},      
+                                                                      \textbf{PyStan}, \textbf{HDDM}, \textbf{HSSM}) \\[1ex]
+                       & \underline{Regression \& GLM Modeling} (\textbf{statsmodels}, \textbf{lm}, 
+                                                                 \textbf{glm}, \textbf{brms}, \textbf{rstanarm}) \\[1ex]
+                       & \underline{Time-Series \& Longitudinal Modeling} (\textbf{survival}, \textbf{dynr},
+                                                                           \textbf{lme}, \textbf{dsem}, \textbf{LMMELSM}) \\[1ex]  
+                       & \underline{Machine/Deep Learning} (\textbf{Keras}, \textbf{PyTorch}, 
+                                                            \textbf{Scikit-Learn}, 
+                                                            \textbf{Tensorflow}) \\[1ex]
+                       & \underline{Natural Language Processing} (\textbf{Gensim}, \textbf{NLTK}, 
+                                                                  \textbf{spaCy}) \\[1ex]
+                       & \underline{Big Data \& High Performance Computing} (\textbf{Cython}, 
+                                                                             \textbf{PySpark},              \textbf{Dask}) \\[1ex]
+                       & \underline{Web Scraping} (\textbf{Request}, \textbf{Selenium}, 
+                                                   \textbf{beautifulsoup4}, \textbf{lxml}) \\[1ex] 
+                       & \underline{Web Development} (\textbf{flask}, \textbf{Django}, 
+                                                      \textbf{React}, \textbf{Node.js}) \\[1ex] 
+                       & \underline{Geographic Information System} (\textbf{ArcGIS Pro}, \textbf{h3-py},  
+                                                                    \textbf{geopandas})\\[1ex]
+                       & \underline{Data Wrangling} (\textbf{Pandas}, \textbf{dplyr}, 
+                                                     \textbf{tidyr}) \\[1ex]
+                       & \underline{Scientific Computing} (\textbf{NumPy}, \textbf{Scipy})\\[1ex] 
+                       & \underline{Visualization} (\textbf{ggplot}, \textbf{Matplotlib}, 
+                                                    \textbf{Seaborn}, \textbf{Vega-Altair}) \\[1.5ex]      
+Questionnaire & Qualtrics, Prolific, Credamo \\[1.5ex]
+Participant Management & Sona Systems, REDCap \\[1.5ex]
+Crowdsourcing & Amazon Mechanical Turk, CloudResearch\\[1.5ex]
+Language & Chinese (native), English (TOEFL 110; IELTS 8; GRE 332+5)\\[1.5ex]
+\end{tabular}\\
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Publications Section
+%----------------------------------------------------------------------------------------
+% Define the heading style for different types of work
+\defbibheading{ref_section_heading}[\refname]{\normalsize\textbf{\underline{#1}}\par}
+
+\begin{rSection}{Publications}
+\nocite{*}
+
+\printbibliography[type=article, title={Published Work}, heading=ref_section_heading]
+
+\printbibliography[type=thesis, title={Thesis}, heading=ref_section_heading]
+
+% Detect manuscripts in press
+\defbibfilter{inpress}{%
+  type=unpublished and
+  keyword={inpress}
+}
+
+\printbibliography[filter=inpress, title={In Press}, heading=ref_section_heading]
+
+% Detect manuscripts under revision
+\defbibfilter{revision}{%
+  type=unpublished and
+  keyword={revision}
+}
+
+\printbibliography[filter=revision, title={Under Revision}, heading=ref_section_heading]
+
+% Detect manuscripts under review
+\defbibfilter{underreview}{%
+  type=unpublished and
+  keyword={submitted}
+}
+
+\printbibliography[filter=underreview, title={Under Review}, heading=ref_section_heading]
+
+% Detect manuscripts in preparation
+\defbibfilter{inprep}{%
+  type=unpublished and
+  keyword={preparation}
+}
+
+\printbibliography[filter=inprep, title={In Preparation}, heading=ref_section_heading]
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Conference Presentation Section
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Conference Presentations}
+\nocite{*}
+
+% Detect poster presentation in conference
+\defbibfilter{poster}{%
+  type=unpublished and
+  keyword={poster}
+}
+
+\newrefcontext[sorting=ymdnt]
+\printbibliography[
+    filter=poster,
+    title={Poster Presentations},
+    heading=ref_section_heading]
+
+% % Detect oral presentation in conference
+% \defbibfilter{oral}{%
+%   type=unpublished and
+%   keyword={oral}
+% }
+% \printbibliography[filter=oral, title={Oral Presentations}, heading=ref_section_heading]
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Teaching Experience Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Teaching Experience}
+
+\textbf{University of Chicago} \hfill {Jan 2025--Mar 2025} \\
+\textit{Teaching Assistant, Computer Science with Social Science Applications 2} \hfill {\textit{Chicago, Illinois}}
+\begin{itemize}
+    \itemsep -5pt {}
+    \item \textbf{Designed} a \href{https://github.com/cty20010831/Github_Collaboration_Demo}{GitHub collaboration tutorial}, covering the advantages and trade-offs of different collaboration approaches using Git and GitHub with in-class demonstration.
+    \item \textbf{Facilitated} group discussions during lab sessions to encourage critical thinking and problem-solving.
+    \item \textbf{Provided} technical and logistic support for students' final group project. 
+    \item \textbf{Graded} assignments and exams and provided constructive feedback to support student learning.
+    \item \textbf{Held} regular office hours to address technical questions and offer personalized tutoring.
+\end{itemize}
+
+\textbf{University of Chicago} \hfill {Sept 2024--Dec 2024} \\
+\textit{Teaching Assistant, Computer Science with Social Science Applications 1} \hfill {\textit{Chicago, Illinois}}
+\begin{itemize}
+    \itemsep -5pt {}
+    \item \textbf{Led} bi-weekly lab sessions with interactive demonstrations to guide students through programming exercises.
+    \item \textbf{Prepared} detailed lab slides and coding examples to clarify complex topics and enhance student engagement.
+    \item \textbf{Facilitated} group discussions during lab sessions to encourage critical thinking and problem-solving.
+    \item \textbf{Graded} assignments and exams and provided constructive feedback to support student learning.
+    \item \textbf{Held} regular office hours to address technical questions and offer personalized tutoring.
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Service & Leadership Section
+%----------------------------------------------------------------------------------------
+\newpage
+\begin{rSection}{Service and Leadership}
+\textbf{Beth Israel Deaconess Medical Center} \hfill {Jul 2025--Nov 2025} \\
+\textit{Digital Outreach for Obtaining Resources and Skills (DOORS) Program} \hfill{\textit{Boston, Massachusetts}}
+\begin{itemize}
+    \itemsep -5pt {}
+    \item \textbf{Contributed} to curriculum design for elderly Chinese-speaking community members at Hong Lok House. 
+    \item \textbf{Translated} digital literacy training materials on smartphone usage into Mandarin.
+    \item \textbf{Facilitated} hands-on training sessions covering fundamental device operations, social media, navigation, video streaming, and artificial intelligence tools. 
+\end{itemize}
+
+\textbf{The Chinese University of Hong Kong} \hfill {Sept 2019--May 2023} \\
+\textit{Undergraduate Admission Ambassador} \hfill{\textit{Shenzhen, China}}
+\begin{itemize}
+    \itemsep -5pt {}
+    \item \textbf{Shared} personal experiences and insights about academic programs, campus life, and student resources with prospective students and families.
+    \item \textbf{Hosted} Q\&A sessions for prospective students and parents to address questions about admissions, academics, and campus culture.
+    \item \textbf{Served} as a peer mentor for prospective students navigating the application and decision-making process. 
+\end{itemize}
+
+\textbf{The Chinese University of Hong Kong} \hfill {Sept 2021--May 2023} \\
+\textit{Psychology Association (PSYA)} \hfill{\textit{Shenzhen, China}}
+\begin{itemize}
+    \itemsep -5pt {}
+    \item \textbf{Designed} mid-term and final exam review sessions for lower-level psychology undergraduate students.
+    \item \textbf{Organized} graduate school application mentorship program, demystifying master program admission processes and sharing application tips for fellow undergraduate students.
+\end{itemize}
+
+\end{rSection}
+
+
+
+\end{document}
+
+
+
+% %----------------------------------------------------------------------------------------
+% %	Archived
+% %----------------------------------------------------------------------------------------
+
+% %----------------------------------------------------------------------------------------
+% %	Moved Pembroke College Summer Research Program into exchange experience
+% %----------------------------------------------------------------------------------------
+
+% \textbf{\href{https://www.pem.cam.ac.uk/international-programmes/pembroke-cambridge-summer-programme}{Pembroke College Summer Research Program}, Cambridge University} \hfill{Jul 2021--Aug 2021} \\
+% \textit{Program Participant (Supervisor: Marta Beneda)} \hfill{\textit{Shanghai, China}}
+%  \begin{itemize}
+%     \itemsep -5pt {} 
+%     \item \textbf{Wrote} a 6000-word review paper on factors predicting intentions to use and reuse online food delivery.
+%     \item \textbf{Conducted} literature review and summarized theoretical/conceptual frameworks in 16 selected papers.
+%     \item \textbf{Synthesized} the common factors predicting people's intentions to use and reuse online food delivery and interpreted the similarity and difference in predictors of intentions to use and reuse
+%     \item \textbf{Evaluated} the strengths and weaknesses in methodology and study design in selected studies and suggested factors and also moderators to be included in future research.
+%     \item \textbf{Received} first-class marks for the project.  
+%  \end{itemize}
+
+% %----------------------------------------------------------------------------------------
+% %	Internship Section
+% %----------------------------------------------------------------------------------------
+
+% \begin{rSection}{Internship Experience}
+% \textbf{iResearch Consulting Group} \hfill Jun 2022--Aug 2022 \\
+% \textit{Strategy Consulting Intern} \hfill \textit{Guangzhou, China}
+%  \begin{itemize}
+%     \itemsep -5pt {} 
+%     \item \textbf{Summarized} interviews with opinionated leaders in manufacturing and fast-moving consumer goods industries.
+%     \item \textbf{Performed} desk research on retail technologies and digital marketing in the wine industry.
+%     \item \textbf{Analyzed} traffic structure of different channels and tracked customer cross-channel journey, followed by A/B tests to compare between-group differences on customer aims of purchase and Gross Merchandise Value contribution in Excel. 
+%     \item \textbf{Calculated} shapely value to quantify channel attribution and spillover effects of e-commerce platforms in Excel.
+%     \item \textbf{Conducted} market basket analysis with apriori algorithm (related goods) and performed logistic regression to determine the significant predictors of purchasing and repurchasing of confectionary goods using R.  
+%     \item \textbf{Wrote} the final report to propose indications on (a) market opportunities for 7 different consumer groups and (b) optimization of 7 touchpoints and ways to speed up consumer conversion on confectionary goods.
+%  \end{itemize}
+% \end{rSection} 
