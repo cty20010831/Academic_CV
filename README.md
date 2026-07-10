@@ -8,3 +8,6 @@
   - **Publications**
   - **Teaching Experience**
   - **Internship Experience**
+
+## Github Integration
+As of 2026/07/10, Overleaf free account user no longer has access to Github integration. I have put this directory on my local Desktop for manual update. 
